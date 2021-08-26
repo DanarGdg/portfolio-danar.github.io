@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --brown:#753422;
+    --light-brown:#f9eeeb;
+    --white:#ffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior:smooth;
+}
+
+svg{
+    display: block;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-family: 16px;
+    overflow-x: hidden;
+}
+
+nav{
+    padding: 0.5rem 10vw;
+    background-color: var(--brown);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width:  40%;
+    justify-content: space-evenly;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu-hamburger{
+    display: none;
+}
+
+/* HEADER */
+.header{
+    background-color: var(--light-brown);
+    text-align: center;
+    padding: 5rem;
+}
+
+.header img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border:1px solid white
+}
+
+.spacer{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 960/300;
+}
+
+.layer-1{
+    background-image: url(../img/layer.svg);
+} 
+
+/* CONTENT */
+.about-me{
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 10vw 5rem;
+}
+
+.sub-about-me{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+
+.sub-about-me div{
+    width: 50%;
+    margin: 2rem 2rem 0;
+}
+
+.sub-about-me div p{
+    font-size: 1.5em;
+    letter-spacing: 1.6;
+}
+
+.project{
+    background-color: var(--light-brown);
+    padding:3rem 10vw;
+}
+
+.project h1{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sub-project{
+    display: flex;
+    justify-content: space-around;
+}
+
+.sub-project div:nth-child(3){
+    margin-top: 2rem;
+}
+
+.mid-card{
+    margin:0 20px;
+}
+
+.card img{
+    width: 100%;
+    display: block;
+}
+
+.card-body{
+    background-color: var(--white);
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 1rem;
+}
+
+.card-body p, .card-body a{
+    font-size: 1.2em;
+}
+
+/* FOOTER */
+footer{
+    color: white;
+    text-align: center;
+    background-color: var(--brown);
+    padding-bottom: 5rem;
+}
+
+footer h1{
+    margin-bottom: 2rem;
+}
+
+.fa-phone{
+    font-size: 1.2em;
+    color: white;
+}
+
+@media all and (max-width : 1000px){
+    .sub-project{
+        justify-content:center;
+        flex-wrap: wrap;
+    }
+    
+    .card{
+        flex-basis:45%;
+    }
+}
+
+@media all and (max-width : 700px){
+    nav{
+        padding:0.5rem 5vw;
+        height: 3rem;
+        position: fixed;
+    }
+
+    nav ul{
+        margin: 0;
+        position: fixed;
+        width: 70%;
+        background-color: var(--brown);
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition: all 0.2s;
+    }
+
+    nav ul.slide{
+        transform: translateX(0);
+    }
+
+    .menu-hamburger{
+        display: inherit;
+        position: relative;
+        z-index: 3;
+    }
+
+    .hamburger-icon, .close-icon{
+        cursor: pointer;
+    }
+
+    .menu-hamburger input, .close-icon{
+        display: none;
+    }
+
+    /* MAIN */
+    .about-me{
+        padding:5rem 0;
+    }
+
+    .sub-about-me{
+        flex-direction: column;
+    }
+
+    .sub-about-me div{
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .sub-about-me div p, .card-body p, .card-body a{
+        font-size: 1em;
+    }
+
+    .project{
+        padding:5rem 5vw;
+    }
+
+    .card{
+        margin: 2rem 0;
+    }
+
+    .sub-project{
+        flex-direction: column;
+    }
+}
